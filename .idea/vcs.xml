@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/third-project" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/third-project/orillusion-webgpu-samples" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/third-project/webgpu-samples" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/webgpu-samples" vcs="Git" />
+  </component>
+</project>
