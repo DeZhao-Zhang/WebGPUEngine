@@ -4,29 +4,43 @@
 
 ## 项目之初
 - 以WebGPU学习为主，并逐渐提炼出通用的函数库
-- 推广图像图形渲染相关知识（请大家多多关注Wiki）
+- 推广图像图形渲染相关知识(请大家多多关注 [**Wiki**](https://github.com/DeZhao-Zhang/WebGPUEngine/wiki) 和 [**CSDN专栏**](https://blog.csdn.net/u010206379/category_12298937.html?spm=1001.2014.3001.5482))
 
-## 使用指南
-1. 项目克隆
+## 项目获取
+1. 完整克隆(包含第三方项目)
 ```angular2html
 git clone --recurse-submodules https://github.com/DeZhao-Zhang/WebGPUEngine.git
 ```
+
+2. 按需克隆
 ```angular2html
-git submodule add https://github.com/DeZhao-Zhang/webgpu-samples.git
+git clone https://github.com/DeZhao-Zhang/WebGPUEngine.git
 ```
 
-2. 查看`webgpu-samples`的demo
+
+## 第三方项目使用指南
+
+- [webgpu-samples](https://github.com/webgpu/webgpu-samples)
+- [orillusion-webgpu-samples](https://github.com/Orillusion/orillusion-webgpu-samples)
+
 ```angular2html
-cd third-project
-cd webgpu-samples
+// 获取关联项目
+git submodule init
+git submodule update
+```
+
+### 使用`webgpu-samples`
+默认访问链接 http://localhost:3000
+```angular2html
+cd third-project/webgpu-samples
 npm install
 npm start
 ```
 
-3. 查看`orillusion-webgpu-samples`demo，[官方项目链接]( https://github.com/Orillusion/orillusion-webgpu-samples)
+### 使用`orillusion-webgpu-samples`
+默认访问链接 http://localhost:3000
 ```angular2html
-cd third-project
-cd orillusion-webgpu-samples
+cd third-project/orillusion-webgpu-samples
 npm install
 npm run dev
 ```
