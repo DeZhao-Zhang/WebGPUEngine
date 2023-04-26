@@ -20,8 +20,8 @@ git clone https://github.com/DeZhao-Zhang/WebGPUEngine.git
 
 ## 第三方项目使用指南
 
-- [webgpu-samples](https://github.com/webgpu/webgpu-samples)
-- [orillusion-webgpu-samples](https://github.com/Orillusion/orillusion-webgpu-samples)
+- [webgpu-samples](https://github.com/DeZhao-Zhang/WebGPUEngine#%E4%BD%BF%E7%94%A8webgpu-samples) & [原址](https://github.com/webgpu/webgpu-samples)
+- [orillusion-webgpu-samples](https://github.com/DeZhao-Zhang/WebGPUEngine#%E4%BD%BF%E7%94%A8orillusion-webgpu-samples) & [原址](https://github.com/webgpu/webgpu-samples)
 
 ```angular2html
 // 获取关联项目
