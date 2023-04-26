@@ -1,0 +1,6 @@
+[submodule "third-project/webgpu-samples"]
+	path = third-project/webgpu-samples
+	url = https://github.com/DeZhao-Zhang/webgpu-samples.git
+[submodule "third-project/orillusion-webgpu-samples"]
+	path = third-project/orillusion-webgpu-samples
+	url = https://github.com/Orillusion/orillusion-webgpu-samples.git
