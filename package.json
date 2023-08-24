@@ -18,6 +18,8 @@
         "vite": "^3.0.9"
     },
     "dependencies": {
-        "gl-matrix": "^3.4.3"
+        "buffer": "^6.0.3",
+        "gl-matrix": "^3.4.3",
+        "jpeg-js": "^0.4.4"
     }
 }
