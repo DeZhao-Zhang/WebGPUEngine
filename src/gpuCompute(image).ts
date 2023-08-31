@@ -149,6 +149,30 @@ async function processImage(array: Uint8Array, width: number, height: number): P
                 struct Image {
                     rgba: array<u32>
                 };
+                
+                fn decompose_rgba(rgba: u32) -> vec4<u32> {
+                    let a = (rgba >> 24) & 0xFF;
+                    let b = (rgba >> 16) & 0xFF;
+                    let g = (rgba >> 8) & 0xFF;
+                    let r = rgba & 0xFF;
+                    return vec4(r, g, b, a);
+                }
+
+                fn compose_rgba(r: u32, g: u32, b: u32, a: u32) -> u32 {
+                    return (a << 24) + (b << 16) + (g << 8) + r;
+                }
+
+                fn grayscale_avg(_rgba: u32) -> u32 {
+                    let rgba = decompose_rgba(_rgba);
+                    let gray = dot(vec3<u32>(rgba.x, rgba.y, rgba.z), vec3<u32>(1)) / 3;
+                    return compose_rgba(gray, gray, gray, gray);
+                }
+
+                fn grayscale_luma(_rgba: u32) -> u32 {
+                    let rgba = decompose_rgba(_rgba);
+                    let gray = (u32(f32(rgba.x) * 0.3) + u32(f32(rgba.y) * 0.59) + u32(f32(rgba.z) * 0.11));
+                    return compose_rgba(gray, gray, gray, 255);
+                }
 
                 @group(0) @binding(0) var<storage,read> widthHeight: Size;
                 @group(0) @binding(1) var<storage,read> inputPixels: Image;
@@ -157,8 +181,12 @@ async function processImage(array: Uint8Array, width: number, height: number): P
                 @compute
                 @workgroup_size(16, 16)
                 fn main(@builtin(global_invocation_id) global_id: vec3<u32>){
+                    if (global_id.x >= widthHeight.size.x || global_id.y >= widthHeight.size.y) {
+                        return;
+                    }
+
                     let index : u32 = global_id.x + global_id.y * widthHeight.size.x;
-                    outputPixels.rgba[index] = inputPixels.rgba[index];
+                    outputPixels.rgba[index] = grayscale_avg(inputPixels.rgba[index]);
                 }
             `
         });
