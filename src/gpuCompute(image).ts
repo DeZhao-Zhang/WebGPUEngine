@@ -106,7 +106,7 @@ async function processImage(array: Uint8Array, width: number, height: number): P
                     }
                 } as GPUBindGroupLayoutEntry,
                 {
-                    binding: 0,
+                    binding: 2,
                     visibility: GPUShaderStage.COMPUTE,
                     buffer: {
                         type: "storage"
